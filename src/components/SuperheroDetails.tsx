@@ -8,12 +8,23 @@ const SuperheroDetails = () => {
 
   const heroId = Number(id);
 
+  
   const { data } = useDetailsQuery(heroId);
   const [remove] = useRemoveMutation();
 
+  
+  
+  if (isNaN(heroId)) return <div>Invalid hero ID</div>;
+  
   if (!data) {
     return <div style={{ padding: 16 }}>Loading…</div>;
   }
+
+const superpowersArray = Array.isArray(data.superpowers)
+  ? data.superpowers
+  : [];
+
+
 
   return (
     <div style={{ padding: 16 }}>
@@ -47,9 +58,10 @@ const SuperheroDetails = () => {
       <p>
         <b>Origin:</b> {data.origin_description}
       </p>
-      <p>
-        <b>Superpowers:</b> {data.superpowers.join(", ") || "—"}
-      </p>
+     <p>
+      <b>Superpowers:</b> {superpowersArray.join(", ")}
+    </p>
+
 
       <div
         style={{
@@ -59,16 +71,22 @@ const SuperheroDetails = () => {
           marginTop: 12,
         }}
       >
-        {data.images.map((img) => (
-          <img
-            key={img.id}
-            src={img.image_url}
-            width={180}
-            height={180}
-            style={{ objectFit: "cover", borderRadius: 8 }}
-          />
-        ))}
+      {data.images?.length ? (
+  data.images.map((img) => (
+    <img
+      key={img.id}
+      src={`http://localhost:4000${img.image_url}`}
+      width={180}
+      height={180}
+      style={{ objectFit: "cover", borderRadius: 8 }}
+    />
+  ))
+) : (
+  <div>No images</div>
+)}
       </div>
     </div>
   );
 };
+
+export default SuperheroDetails;
