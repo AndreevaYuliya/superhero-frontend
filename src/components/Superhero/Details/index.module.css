@@ -1,0 +1,64 @@
+.container {
+  padding: 24px;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.loading {
+	margin: 16px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.linkButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #1976d2;
+  color: #fff;
+  font-weight: 500;
+}
+
+.deleteButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #f44336;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.infoGrid {
+  display: grid;
+  row-gap: 8px;
+}
+
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.image {
+  object-fit: contain;
+  border-radius: 8px;
+  width: 100%;
+  max-height: 400px;
+}

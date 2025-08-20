@@ -1,0 +1,37 @@
+.container {
+	padding: 0 16px;
+}
+
+.loading {
+	margin: 16px 0;
+}
+
+.heroesList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.heroLink {
+	text-decoration: none;
+	color: inherit;
+}
+
+.heroCard {
+	border-radius: 8px;
+	margin: 0 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.heroName {
+	text-align: center;
+}
+
+.heroImage {
+	max-width: 400px;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 8px;
+}
